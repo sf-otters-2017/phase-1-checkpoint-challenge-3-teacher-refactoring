@@ -1,4 +1,4 @@
-class ApprenticeTeacher
+class ApprenticeTeacher < SeniorTeacher
   attr_reader :age, :salary, :phase, :target_raise
   attr_accessor :name
 
@@ -9,15 +9,6 @@ class ApprenticeTeacher
     @phase = 3
   end
 
-  def offer_high_five
-    "High five!"
-  end
-
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
-  end
-
   def teach_stuff
     response = ""
     response += "Listen, class, this is how everything works. "
@@ -26,8 +17,17 @@ class ApprenticeTeacher
     response
   end
 
+#from SeniorTeacher
+  # def teach_stuff
+  #   response = ""
+  #   response += "Listen, class, this is how everything works, fo SHO! "
+  #   response += "*drops flat-out insane knowledge bomb* "
+  #   response += "... You're welcome. *saunters away*"
+  #   response
+  # end
+
   def salary=(new_salary)
-    puts "This better be good!"
+    puts super
     @salary = new_salary
   end
 
