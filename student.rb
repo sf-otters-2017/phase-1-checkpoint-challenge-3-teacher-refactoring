@@ -1,11 +1,7 @@
-require_relative 'senior_teacher'
-require_relative 'apprentice_teacher'
 require_relative 'Action'
-
 
 class Student
   include Action1
-
   attr_reader :age, :phase
   attr_accessor :name
 

@@ -1,31 +1,28 @@
+require_relative 'teacher'
 require_relative 'Action'
 
-class SeniorTeacher
+class SeniorTeacher < Teacher
   include Action1
   include Action2
 
-  attr_reader :age, :salary, :phase, :performance_rating, :target_raise
-  attr_accessor :name, :Nrating
+  attr_reader  :performance_rating, :Nrating
+
 
   def initialize(options={})
-
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
+    super
     @target_raise = 1000
-    @phase = 3
     @Nrating=90
+    @string1="Listen, class, this is how everything works, fo SHO! "
+    @string2="... You're welcome. *saunters away*"
   end
-
 
   def teach_stuff
     response = ""
-    response += "Listen, class, this is how everything works, fo SHO! "
+    response += @string1
     response += "*drops flat-out insane knowledge bomb* "
-    response += "... You're welcome. *saunters away*"
+    response += @string2
     response
   end
-
-
 
   def lead_training_session
     puts "Hey newbie!  Here are some common pitfalls.  Don't fall in them!"

@@ -34,4 +34,12 @@ module Action2
     end
     response
   end
+
+  def teach_stuff
+    response = ""
+    response += @string1
+    response += "*drops crazy knowledge bomb* "
+    response += @string2
+    response
+  end
 end
