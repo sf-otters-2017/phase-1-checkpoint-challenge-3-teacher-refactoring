@@ -1,6 +1,10 @@
+require_relative 'booted'
+
 class SeniorTeacher
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
+
+  include Booted
 
   def initialize(options={})
     @phase = 3
@@ -9,14 +13,14 @@ class SeniorTeacher
     @target_raise = 1000
   end
 
-  def offer_high_five
-    "High five!"
-  end
-
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
-  end
+  # def offer_high_five
+  #   "High five!"
+  # end
+  #
+  # def set_phase(num)
+  #   @phase = num
+  #   "Cool, I've always wanted to teach phase #{num}!"
+  # end
 
   def teach_stuff
     response = ""
