@@ -2,6 +2,7 @@ require_relative 'high_five.rb'
 require_relative 'salary.rb'
 require_relative 'raise.rb'
 require_relative 'phase.rb'
+require_relative 'rating.rb'
 
 class ApprenticeTeacher
   attr_reader :age, :salary, :phase, :target_raise
@@ -11,12 +12,14 @@ class ApprenticeTeacher
   include Salary
   include Raise
   include Phase
+  include Rating
 
   def initialize(options={})
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
     @target_raise = 800
     @phase = 3
+    @performance_bar = 80
   end
 
   def teach_stuff
@@ -24,18 +27,6 @@ class ApprenticeTeacher
     response += "Listen, class, this is how everything works. "
     response += "*drops crazy knowledge bomb* "
     response += "... You're welcome."
-    response
-  end
-
-  def set_performance_rating(rating)
-    response = ""
-    if rating > 80
-      response = "Yay, I'm a great employee!"
-      receive_raise(@target_raise)
-    else
-      response += "Oh, well -- thanks to this actionable, specific, and kind "
-      response += "feedback, I'll do better next time."
-    end
     response
   end
 
