@@ -9,7 +9,7 @@ class Student
   end
 
   def offer_high_five
-    "High five!"
+      "High five!"
   end
 
   def set_phase(num)
