@@ -3,6 +3,7 @@ require_relative 'salary.rb'
 require_relative 'raise.rb'
 require_relative 'phase.rb'
 require_relative 'rating.rb'
+require_relative 'teach.rb'
 
 class ApprenticeTeacher
   attr_reader :age, :salary, :phase, :target_raise
@@ -13,6 +14,7 @@ class ApprenticeTeacher
   include Raise
   include Phase
   include Rating
+  include Teach
 
   def initialize(options={})
     @age = options.fetch(:age, 0)
@@ -20,14 +22,9 @@ class ApprenticeTeacher
     @target_raise = 800
     @phase = 3
     @performance_bar = 80
-  end
-
-  def teach_stuff
-    response = ""
-    response += "Listen, class, this is how everything works. "
-    response += "*drops crazy knowledge bomb* "
-    response += "... You're welcome."
-    response
+    @assurance = ". "
+    @bomb  = "crazy"
+    @finish = ""
   end
 
   def attend_training_session
