@@ -1,3 +1,5 @@
+require_relative "module.rb"
+
 class Student
   attr_reader :age, :phase
   attr_accessor :name
@@ -8,6 +10,8 @@ class Student
     @name = options.fetch(:name, "")
   end
 
+  # include Bootcamp
+  
   def offer_high_five
     "High five!"
   end

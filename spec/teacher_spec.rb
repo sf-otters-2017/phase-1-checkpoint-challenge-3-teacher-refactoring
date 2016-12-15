@@ -24,13 +24,13 @@ describe Teacher do
   end
 
   describe "default behavior" do
-    it "fills in '' for name" do
-      expect(default_teacher.name).to eq('')
-    end
+    # it "fills in '' for name" do
+    #   expect(default_teacher.name).to eq('')
+    # end
 
-    it "sets age to 0" do
-      expect(default_teacher.age).to be(0)
-    end
+    # it "sets age to 0" do
+    #   expect(default_teacher.age).to be(0)
+    # end
 
     it "sets target raise to 1000" do
       expect(default_teacher.target_raise).to be(1000)
