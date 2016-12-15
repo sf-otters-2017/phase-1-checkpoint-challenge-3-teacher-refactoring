@@ -15,10 +15,6 @@ class Teacher < DBC
     "Cool, I've always wanted to teach phase #{num}!"
   end
 
-  def receive_raise(raise)
-    @salary += raise
-  end
-
   def set_performance_rating(rating)
     response = ""
     if rating > 80
@@ -37,5 +33,9 @@ class Teacher < DBC
   def salary=(new_salary)
     puts "This better be good!"
     @salary = new_salary
+  end
+
+  def receive_raise(raise)
+    @salary += raise
   end
 end
