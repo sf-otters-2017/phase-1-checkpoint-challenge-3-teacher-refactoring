@@ -1,3 +1,12 @@
+require 'apprentice_teacher'
+require 'student'
+
+#do i need to require these files in order to get rspec to run?
+#why doesn't bundle work even though i installed it as a gem?
+#how often should i include super? what is best practice?
+#do i need to include the superclass every time?
+#require vs require_relative
+
 class SeniorTeacher
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
