@@ -1,4 +1,37 @@
-class SeniorTeacher
+# require_relative 'apprentice_teacher'
+# require_relative 'teacher'
+module High_five
+  def offer_high_five
+    "High five!"
+  end
+end
+
+
+class Teacher
+  include High_five
+  attr_reader :age, :salary, :phase, :target_raise
+  attr_accessor :name
+
+  def set_phase(num)
+    @phase = num
+    "Cool, I've always wanted to teach phase #{num}!"
+  end
+
+  def salary=(new_salary)
+    puts "This better be good!"
+    @salary = new_salary
+  end
+
+  def receive_raise(raise)
+    @salary += raise
+  end
+
+end#END Teacher
+
+
+
+class SeniorTeacher < Teacher
+  include High_five
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
 
@@ -9,13 +42,14 @@ class SeniorTeacher
     @target_raise = 1000
   end
 
-  def offer_high_five
-    "High five!"
-  end
+  # def offer_high_five
+  #   "High five!"
+  # end
 
   def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
+    # @phase = num
+    # "Cool, I've always wanted to teach phase #{num}!"
+    super
   end
 
   def teach_stuff
@@ -27,12 +61,14 @@ class SeniorTeacher
   end
 
   def salary=(new_salary)
-    puts "This better be good!"
-    @salary = new_salary
+    super
+    # puts "This better be good!"
+    # @salary = new_salary
   end
 
   def receive_raise(raise)
-    @salary += raise
+    super
+    # @salary += raise
   end
 
   def set_performance_rating(rating)
