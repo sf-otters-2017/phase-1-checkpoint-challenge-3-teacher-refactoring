@@ -1,4 +1,7 @@
+require_relative 'senior_teacher'
+
 class Student < SeniorTeacher
+  include SeniorTeacher
   attr_reader :age, :phase
   attr_accessor :name
 
