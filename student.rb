@@ -1,15 +1,15 @@
+require_relative 'highfiveable'
+
 class Student
-  attr_reader :age, :phase
+  include Highfiveable
+  attr_reader :age, :phase, :learn_stuff
   attr_accessor :name
 
   def initialize(options = {})
     @phase = 1
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
-  end
-
-  def offer_high_five
-    "High five!"
+    @learn_stuff = "WHOA! I've never thought of it quite like that before. Now I feel like a genius!"
   end
 
   def set_phase(num)
@@ -21,13 +21,6 @@ class Student
       response = "Oooh, phase #{num}. I hope I'm ready!"
     end
     @phase = num
-    response
-  end
-
-  def learn_stuff
-    response = ""
-    response += "WHOA! I've never thought of it quite like that before. "
-    response += "Now I feel like a genius!"
     response
   end
 end
