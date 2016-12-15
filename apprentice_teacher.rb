@@ -1,10 +1,10 @@
 require_relative 'devbootcamp.rb'
 
-class ApprenticeTeacher < DevBootcamp
+class ApprenticeTeacher < Teacher
   # attr_reader :age, :salary, :phase, :target_raise
   # attr_accessor :name
 
-  attr_reader :target_raise
+  # attr_reader :target_raise
   attr_accessor :salary
 
   def initialize(options={})
@@ -12,17 +12,18 @@ class ApprenticeTeacher < DevBootcamp
     # @age = options.fetch(:age, 0)
     # @name = options.fetch(:name, "")
     @target_raise = 800
-    @phase = 3
+    # @phase = 3
+    @salary = 0
   end
 
   # def offer_high_five
   #   "High five!"
   # end
 
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
-  end
+  # def set_phase(num)
+  #   @phase = num
+  #   "Cool, I've always wanted to teach phase #{num}!"
+  # end
 
   def teach_stuff
     response = ""
@@ -37,9 +38,9 @@ class ApprenticeTeacher < DevBootcamp
   #   @salary = new_salary
   # end
 
-  def receive_raise(raise)
-    @salary += raise
-  end
+  # def receive_raise(raise)
+  #   @salary += raise
+  # end
 
   def set_performance_rating(rating)
     response = ""

@@ -11,3 +11,21 @@ class DevBootcamp
     "High five!"
   end
 end
+
+class Teacher < DevBootcamp
+  attr_reader :target_raise
+  # attr_accessor :salary
+  def initialize(options = {})
+    super
+    @phase = 3
+  end
+
+  def set_phase(num)
+    @phase = num
+    "Cool, I've always wanted to teach phase #{num}!"
+  end
+
+  def receive_raise(raise)
+    @salary += raise
+  end
+end
