@@ -1,16 +1,16 @@
-class SeniorTeacher
-  attr_reader :age, :salary, :phase, :performance_rating, :target_raise
-  attr_accessor :name
+require_relative 'highfiveable'
+require_relative 'teacher'
+
+class SeniorTeacher < Teacher
+  include Highfiveable
+  attr_reader :performance_rating, :target_raise, :lead_training_session
 
   def initialize(options={})
-    @phase = 3
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
+    super
     @target_raise = 1000
-  end
-
-  def offer_high_five
-    "High five!"
+    @phase = 3
+    @teach_stuff = "Listen, class, this is how everything works, fo SHO! *drops flat-out insane knowledge bomb* ... You're welcome. *saunters away*"
+    @lead_training_session = "Hey newbie!  Here are some common pitfalls.  Don't fall in them!"
   end
 
   def set_phase(num)
@@ -18,21 +18,9 @@ class SeniorTeacher
     "Cool, I've always wanted to teach phase #{num}!"
   end
 
-  def teach_stuff
-    response = ""
-    response += "Listen, class, this is how everything works, fo SHO! "
-    response += "*drops flat-out insane knowledge bomb* "
-    response += "... You're welcome. *saunters away*"
-    response
-  end
-
   def salary=(new_salary)
     puts "This better be good!"
     @salary = new_salary
-  end
-
-  def receive_raise(raise)
-    @salary += raise
   end
 
   def set_performance_rating(rating)
@@ -45,9 +33,5 @@ class SeniorTeacher
       response += "feedback, I'll do better next time."
     end
     response
-  end
-
-  def lead_training_session
-    puts "Hey newbie!  Here are some common pitfalls.  Don't fall in them!"
   end
 end
