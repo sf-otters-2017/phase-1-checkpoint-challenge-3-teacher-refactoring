@@ -1,7 +1,7 @@
 require_relative 'senior_teacher'
 require_relative 'Action'
 
-class ApprenticeTeacher #< SeniorTeacher
+class ApprenticeTeacher 
  include Action1
  include Action2
 
@@ -9,6 +9,7 @@ class ApprenticeTeacher #< SeniorTeacher
   attr_accessor :name, :Nrating
 
   def initialize(options={})
+
     @target_raise = 800
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
