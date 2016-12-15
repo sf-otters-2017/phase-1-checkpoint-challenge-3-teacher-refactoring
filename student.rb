@@ -13,7 +13,6 @@ class Student
     @name = options.fetch(:name, "")
   end
 
-
   def set_phase(num)
     response = ""
     if num == @phase

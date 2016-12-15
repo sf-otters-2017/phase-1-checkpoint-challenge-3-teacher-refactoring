@@ -2,12 +2,11 @@ require_relative 'teacher'
 
 class SeniorTeacher < Teacher
 
-  attr_reader :phase, :target_raise, :performance_rating
+  attr_reader :target_raise, :performance_rating
 
   def initialize(options={})
     super
     @target_raise = 1000
-    @phase = 3
     @performance_rating =  options[:rating]
   end
 
@@ -18,15 +17,6 @@ class SeniorTeacher < Teacher
     response += "... You're welcome. *saunters away*"
     response
   end
-
-  # def salary=(new_salary)
-  #   puts "This better be good!"
-  #   @salary = new_salary
-  # end
-
-  # def receive_raise(raise)
-  #   @salary += raise
-  # end
 
   def set_performance_rating(rating)
     response = ""

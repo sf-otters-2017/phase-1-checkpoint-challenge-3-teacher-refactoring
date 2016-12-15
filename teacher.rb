@@ -8,10 +8,9 @@ include HighFiveable
   attr_accessor :name
 
   def initialize(options={})
-    @phase = 0
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
-    @target_raise = 0
+    @phase = 3
   end
 
   def set_phase(num)
@@ -23,6 +22,7 @@ include HighFiveable
     puts "This better be good!"
     @salary = new_salary
   end
+
 
   def receive_raise(raise)
     @salary += raise
