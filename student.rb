@@ -1,16 +1,16 @@
+require_relative 'Action'
+
 class Student
+  include Action1
   attr_reader :age, :phase
   attr_accessor :name
 
   def initialize(options = {})
-    @phase = 1
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
+    @phase = 1
   end
 
-  def offer_high_five
-    "High five!"
-  end
 
   def set_phase(num)
     response = ""
