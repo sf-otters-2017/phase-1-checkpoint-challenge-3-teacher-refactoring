@@ -1,4 +1,7 @@
 require_relative '../apprentice_teacher'
+require_relative '../person'
+require_relative '../payable'
+
 
 describe ApprenticeTeacher do
   let(:rey) { ApprenticeTeacher.new({name: "Rey", age: 21}) }
