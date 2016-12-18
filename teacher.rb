@@ -2,9 +2,12 @@ require_relative 'person'
 
 class Teacher < Person
 
+  attr_reader :minimum_rating, :response, :salary
+
   def initialize(options={})
     super
     @minimum_rating = 0
+    @response = ""
   end
 
   def set_phase(num)
@@ -31,6 +34,10 @@ class Teacher < Person
       response += "feedback, I'll do better next time."
     end
     response
+  end
+
+  def teach_stuff
+    @response
   end
 
 
