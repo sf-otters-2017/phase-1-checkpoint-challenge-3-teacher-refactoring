@@ -3,10 +3,14 @@ require_relative 'educator'
 
 class SeniorTeacher < Educator
   include Praiseable
-  RATING = 90
-  RAISE = 1000
 
   attr_reader :performance_rating
+
+  def initialize(options={})
+    super
+    @target_raise = 1000
+    @rating = 90
+  end
 
   def teach_stuff
     response = ""

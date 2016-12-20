@@ -3,8 +3,12 @@ require_relative 'educator'
 
 class ApprenticeTeacher < Educator
   include Praiseable
-  RATING = 80
-  RAISE = 800
+
+  def initialize(options={})
+    super
+    @target_raise = 800
+    @rating = 80
+  end
 
   def teach_stuff
     response = ""
