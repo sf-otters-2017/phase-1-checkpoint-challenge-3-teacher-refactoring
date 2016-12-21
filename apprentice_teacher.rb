@@ -1,21 +1,13 @@
-class ApprenticeTeacher
-  attr_reader :age, :salary, :phase, :target_raise
-  attr_accessor :name
+require_relative 'dbc_people'
+
+class ApprenticeTeacher < Teachers
+  attr_reader :age, :salary, :performance_rating, :target_raise
+  attr_accessor :name, :phase
 
   def initialize(options={})
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
-    @target_raise = 800
+    super
     @phase = 3
-  end
-
-  def offer_high_five
-    "High five!"
-  end
-
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
+    @target_raise = 800
   end
 
   def teach_stuff
@@ -26,18 +18,9 @@ class ApprenticeTeacher
     response
   end
 
-  def salary=(new_salary)
-    puts "This better be good!"
-    @salary = new_salary
-  end
-
-  def receive_raise(raise)
-    @salary += raise
-  end
-
   def set_performance_rating(rating)
     response = ""
-    if rating > 80
+    if rating > 100
       response = "Yay, I'm a great employee!"
       receive_raise(@target_raise)
     else
