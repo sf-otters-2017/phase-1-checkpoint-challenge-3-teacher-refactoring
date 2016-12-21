@@ -6,7 +6,6 @@ class Educator
     @phase = 3
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
-    @rating
   end
 
   def set_phase(num)

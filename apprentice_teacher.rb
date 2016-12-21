@@ -11,14 +11,11 @@ class ApprenticeTeacher < Educator
   end
 
   def teach_stuff
-    response = ""
-    response += "Listen, class, this is how everything works. "
-    response += "*drops crazy knowledge bomb* "
-    response += "... You're welcome."
-    response
+  "Listen, class, this is how everything works. *drops crazy knowledge bomb*"\
+  " ... You're welcome."
   end
 
   def attend_training_session
-    puts "Whoa. I know ruby-fu"
+    "Whoa. I know ruby-fu"
   end
 end
